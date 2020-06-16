@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+        web:
+                image: testing
+                volumes:
+                        - ./services/web/:/home/work
+                ports:
+                        - "8080:8080"
+

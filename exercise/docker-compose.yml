@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+
+        app:
+                build: ./fab/
+                ports:
+                        - "8080:8080"
+                volumes:
+                        - fab:/home/work
+                environment:
+                        - DATABASE_URL="postgresql://postgres:password@localhost/db"
+
+        rp:
+                build: ./nginx-rp/
+                ports:
+                        - "80:80"
+
+        db:
+                image: postgres
+                ports:
+                        - "5000:5000"
+                volumes:
+                        - postgres_data:/var/lib/postgresql/data/
+                environment:
+                        - POSTGRES_PASSWORD=password
+                        - POSTGRES_DB=db
+
+
+volumes:
+        fab:
+        postgres_data:

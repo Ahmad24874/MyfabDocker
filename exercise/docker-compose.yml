@@ -8,7 +8,11 @@ services:
                   - "8080:8080"
                 volumes:
                   - data2:/home/work
+                networks:
+                        app_net:
+                                ipv4_address: 172.21.0.6
                 tty: true
+                # command: python run.py
 
         rp:
                 build: ./nginx-rp/
@@ -22,8 +26,18 @@ services:
                 environment:
                         - POSTGRES_PASSWORD=password
                 volumes:
-                        - postgres_data:/var/lib/postgresql/
+                        - postgres_data:/var/lib/postgresql/data/
+                networks:
+                        app_net:
+                                ipv4_address: 172.21.0.5
 
 volumes:
         data2:
         postgres_data:
+
+networks:
+        app_net:
+                ipam:
+                        driver: default
+                        config:
+                                - subnet: "172.21.0.0/24"

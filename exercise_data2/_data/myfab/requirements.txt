@@ -35,7 +35,7 @@ pyrsistent==0.14.11       # via jsonschema
 python-dateutil==2.8.0
 python3-openid==3.1.0     # via flask-openid
 pytz==2018.9              # via babel, flask-babel
-pyyaml==5.1               # via apispec
+pyyaml==5.4               # via apispec
 six==1.12.0               # via flask-jwt-extended, jsonschema, prison, pyrsistent, python-dateutil, sqlalchemy-utils
 sqlalchemy-utils==0.33.9
 sqlalchemy==1.3.1         # via flask-sqlalchemy, marshmallow-sqlalchemy, sqlalchemy-utils

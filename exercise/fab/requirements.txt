@@ -13,7 +13,7 @@ defusedxml==0.5.0         # via python3-openid
 dnspython==1.16.0         # via email-validator
 email-validator==1.0.5
 flask==1.1.1
-flask-appbuilder==2.3.4
+flask-appbuilder==3.3.0
 flask-babel==1.0.0
 flask-jwt-extended==3.18.0
 flask-login==0.4.1
